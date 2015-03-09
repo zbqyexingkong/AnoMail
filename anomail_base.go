@@ -68,7 +68,6 @@ func __execute(temp_file string, receiver string) error {
 	}
 	cmd.Stdin = file_handler
 	result, ex_err := cmd.Output()
-	fmt.Println(result, ex_err)
 	if ex_err != nil {
 		return ex_err
 	}
