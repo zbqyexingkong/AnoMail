@@ -61,7 +61,6 @@ func (this AnoMail) Send(content string) error {
 
 func __execute(temp_file string, receiver string) error {
 	cmd := exec.Command("/usr/sbin/sendmail", receiver)
-	fmt.Println(temp_file)
 	file_handler, o_err := os.Open(temp_file)
 	if o_err != nil {
 		return o_err
