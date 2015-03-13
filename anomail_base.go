@@ -24,7 +24,7 @@ func New(subject string, mail_from string, mail_tos []string) *AnoMail {
 	Mail := &AnoMail{
 		Subject:         subject,
 		ReceiverPostfix: "@xiaomi.com",
-		MailType:        "text/html",
+		MailType:        "text/Plain;charset=utf-8",
 		From:            mail_from,
 		To:              mail_tos,
 		Cc:              []string{},
