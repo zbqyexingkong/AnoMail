@@ -130,7 +130,7 @@ func (this AnoMail) __make_addr_for_body(mails []string) string {
 	mails = __add_mail_postfix(mails, this.ReceiverPostfix)
 	var temp_list []string
 	for _, mail := range mails {
-		temp_list = append(temp_list, "<"+mail+">")
+		temp_list = append(temp_list, mail)
 	}
 	addrs := strings.Join(temp_list, ";")
 	return addrs
