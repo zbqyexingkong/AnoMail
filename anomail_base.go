@@ -24,7 +24,7 @@ func New(subject string, mail_from string, mail_tos []string) *AnoMail {
 	Mail := &AnoMail{
 		Subject:         subject,
 		ReceiverPostfix: "@xiaomi.com",
-		MailType:        "text/html",
+		MailType:        "text/Plain;charset=utf-8",
 		From:            mail_from,
 		To:              mail_tos,
 		Cc:              []string{},
@@ -61,14 +61,12 @@ func (this AnoMail) Send(content string) error {
 
 func __execute(temp_file string, receiver string) error {
 	cmd := exec.Command("/usr/sbin/sendmail", receiver)
-	fmt.Println(temp_file)
 	file_handler, o_err := os.Open(temp_file)
 	if o_err != nil {
 		return o_err
 	}
 	cmd.Stdin = file_handler
-	result, ex_err := cmd.Output()
-	fmt.Println(result, ex_err)
+	_, ex_err := cmd.Output()
 	if ex_err != nil {
 		return ex_err
 	}
