@@ -5,6 +5,6 @@ AnoMail（Anonymous Mail）匿名邮件
 
 使用方法：
 ====
-- go get github.com/gaojiasheng/anomail
-- 代码里import "github.com/gaojiasheng/anomail"
+- go get github.com/zbqyexingkong/anomail
+- 代码里import "github.com/zbqyexingkong/anomail"
 - 其他请见anomail_test.go

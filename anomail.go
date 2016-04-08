@@ -4,6 +4,11 @@ import (
 	_ "fmt"
 )
 
+//content_type参数说明:
+//1. text/plain  纯文本
+//2. text/html  HTML文档
+//3. text/xml  XML文档
+
 func SendSimple(subject string, mail_from string, mail_to []string, content string, content_type ...string) error {
 	Mail := New(subject, mail_from, mail_to)
 	if 0 < len(content_type) {
